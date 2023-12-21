@@ -12,5 +12,4 @@ public interface BrandRepository extends JpaRepository<BrandEntity, UUID> {
 	
 	BrandEntity findByBrandId(UUID brandId);
 
-	BrandEntity findByBrandName(String brandName);
 }

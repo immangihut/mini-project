@@ -56,21 +56,6 @@ public class CarService {
 		return new SimpleResponse(GenericConstant.SUCCESS, "Successfully add new car", response);
 	}
 	
-	public SimpleResponse getCar(CarDto dto) {
-		if(dto.getCarId() == null) {
-			return new SimpleResponse(GenericConstant.FAILED, "Id is null", null);
-		}
-		
-		Map<String, Object> response = new HashMap<>();
-		
-		CarEntity car = carRepository.findById(UUID.fromString(dto.getCarId())).orElseThrow();
-		response.put("carId", car.getCarId());
-		response.put("carName", car.getCarName());
-		response.put("brandName", car.getBrand().getBrandName());
-		
-		return new SimpleResponse(GenericConstant.SUCCESS, "Car found", response);
-	}
-	
 	public SimpleResponse getCars(Optional<String> brandName) {
 		List<CarEntity> cars;
 		

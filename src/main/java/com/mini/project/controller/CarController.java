@@ -37,18 +37,6 @@ public class CarController {
 		return new ResponseEntity<SimpleResponse>(response, HttpStatus.OK);
 	}
 	
-	@PostMapping("/detail")
-	@ResponseBody
-	public ResponseEntity<SimpleResponse> Cardetail(@RequestBody CarDto dto) {
-		SimpleResponse response = null;
-		try {
-			response = carService.getCar(dto);
-		} catch(Exception e) {
-			response = new SimpleResponse(GenericConstant.INTERNAL_ERROR, e.getMessage(), null);
-		}
-		return new ResponseEntity<SimpleResponse>(response, HttpStatus.OK);
-	}
-	
     @GetMapping
     public ResponseEntity<SimpleResponse> getCars(@RequestParam Optional<String> brand) {
         SimpleResponse response = null;
