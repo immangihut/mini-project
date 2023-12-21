@@ -35,6 +35,7 @@ Brand Table:
 | ------ | ----------- |
 | brand_id  | UUID (Primary Key, Not Null, Unique)  |
 | brand_name| VARCHAR(250) (Not Null)              |
+
 Car Table:
 | Column | Description |
 | ------ | ----------- |
